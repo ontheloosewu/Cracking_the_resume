@@ -6,7 +6,8 @@ var mongoose = require('mongoose');
 //Retreiving the comment schema 
 var Comment = require('../Models/comments');
 var Resume = require("../Models/resume"); 
-var User = require('../Models/user'); 
+var User = require('../Models/user');
+var index = require("../Routes/index")
 
 
 

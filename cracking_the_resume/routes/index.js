@@ -25,9 +25,9 @@ passport.use('local.login',new local_strategy({
 
     //Find the user in the database
     User.findOne({'UserName': username}, function(err, user) {
-
+        console.log("trying to the username")
+        console.log(username)
         if(err) {
-            throw err;
             return done(err);
         }
         //if User does not exists return done
@@ -91,5 +91,7 @@ function isLoggedIn(req,res, next) {
     }
     res.redirect('/');
 }
+
+
 
 module.exports = router;

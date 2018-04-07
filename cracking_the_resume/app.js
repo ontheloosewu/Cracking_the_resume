@@ -46,7 +46,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/public')));
-app.use(express.static("../Resumes"));
+app.use(express.static(path.join(__dirname, '/Resume')));
+
+app.use(express.static("Resume"));
 app.use(express.static("public"));
 
 //add session middleware to save session in the database
