@@ -1,24 +1,32 @@
 $(function () {
 
   //1 for liked, 0 for disliked
-  var clicked = 0;
 
   $(".like").click(function() {
-    var input = $(this).find('.qty1');
-      input.val(parseInt(input.val())+ 1);
-      $(".like").prop('disabled', true);
-      $(".dislike").prop('disabled', true);
+    // var input = $(this).find('.qty1');
+    //   input.val(parseInt(input.val())+ 1);
+    //   $(".like").prop('disabled', true);
+    //   $(".dislike").prop('disabled', true);
+      if($(".qty1").data("id") == 1){
+        $(".dislike").prop('disabled', true);
+        $(".like").prop('disabled', true);
+        $(".like").css("background-color", "blue");
+
+      }
       // $(".qty2").val(parseInt(input.val()) - 1);
-      clicked = 1;
   });
 
   $(".dislike").click(function() {
-    var input = $(this).find('.qty2');
-      input.val(parseInt(input.val())+ 1);
-      $(".dislike").prop('disabled', true);
-      $(".like").prop('disabled', true);
+    // var input = $(this).find('.qty2');
+    //   input.val(parseInt(input.val())+ 1);
+    //   $(".dislike").prop('disabled', true);
+      // $(".like").prop('disabled', true);
+      if($(".qty2").data("id") == 1){
+        $(".dislike").prop('disabled', true);
+        $(".like").prop('disabled', true);
+        $(".dislike").css("background-color", "blue");
+      }
       // $(".qty1").val(parseInt(input.val()) - 1);
-      clicked = 0;
   });
 
   //disables submit if comment is empty or contains all spaces only
